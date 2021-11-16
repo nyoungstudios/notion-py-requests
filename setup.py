@@ -16,7 +16,7 @@ def get_version():
     """
     content = read_content('notion_requests/version.py')
     parts = content.rstrip().split(' ')
-    return parts[-1]
+    return parts[-1].strip("'")
 
 
 setup(
