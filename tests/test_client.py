@@ -87,6 +87,42 @@ class TestDatabases(TestBase):
 
         self.assertEqual(expected_count, actual_count)
 
+    def test_query_pagination(self):
+        database_id = os.environ['NOTION_DATABASE_QUERY_ID']
+        query = {
+            'database_id': database_id,
+            'filter': {
+                'and': [
+                    {
+                        'property': 'Type',
+                        'select': {
+                            'equals': 'fruit'
+                        }
+                    },
+                    {
+                        'property': 'Notes',
+                        'text': {
+                            'is_not_empty': True
+                        }
+                    }
+                ]
+            },
+            'sorts': [
+                {
+                    'property': 'Name',
+                    'direction': 'ascending'
+                }
+            ],
+            'page_size': 1
+        }
+
+        expected_count = 2
+        actual_count = 0
+        for response in self.notion.databases.query(**query):
+            actual_count += len(response['results'])
+
+        self.assertEqual(expected_count, actual_count)
+
     def test_create_and_update_and_delete(self):
         parent_page_id = os.environ['NOTION_PARENT_PAGE_ID']
         database_name = 'Grocery List'

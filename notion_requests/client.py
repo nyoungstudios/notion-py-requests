@@ -72,7 +72,7 @@ class Client:
                 kwargs['start_cursor'] = data['next_cursor']
             else:
                 kwargs = {'start_cursor': data['next_cursor']}
-            yield fn(*args, **kwargs)
+            yield from fn(*args, **kwargs)
 
 
 class Endpoint:
