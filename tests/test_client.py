@@ -154,14 +154,12 @@ class TestDatabases(TestBase):
         self.assertEqual(database_name, response['title'][0]['plain_text'])
 
     def test_list(self):
-        lower_bound_count = 1
-        upper_bound_count = 5
+        expected_count = 1
         actual_count = 0
         for response in self.notion.databases.list():
             actual_count += len(response['results'])
 
-        self.assertLessEqual(lower_bound_count, actual_count)
-        self.assertLessEqual(actual_count, upper_bound_count)
+        self.assertEqual(expected_count, actual_count)
 
 
 class TestPages(TestBase):
