@@ -1,5 +1,11 @@
 <h1 align="center">Notion Python Requests</h1>
 
+[![tests](https://github.com/nyoungstudios/notion-py-requests/actions/workflows/python_test.yml/badge.svg)](https://github.com/nyoungstudios/notion-py-requests/actions/workflows/python_test.yml)
+[![codecov](https://codecov.io/gh/nyoungstudios/notion-py-requests/branch/main/graph/badge.svg?token=9M2UZ4WJ36)](https://codecov.io/gh/nyoungstudios/notion-py-requests)
+[![Gitpod ready](https://img.shields.io/badge/Gitpod-ready-blue?logo=gitpod)](https://gitpod.io/#https://github.com/nyoungstudios/notion-py-requests)
+[![PyPI version shields.io](https://img.shields.io/pypi/v/notion-requests.svg)](https://pypi.python.org/project/notion-requests/)
+[![PyPI license](https://img.shields.io/pypi/l/notion-requests.svg)](https://pypi.python.org/project/notion-requests/)
+
 This is a mostly unopinionated Python client for Notion's API using the Python Requests library. This means that the
 structure of functions and usage of this client library is almost identical to the official
 [Notion JavaScript SDK](https://developers.notion.com/reference/intro). The only opinionated part is that this client
