@@ -19,6 +19,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment: Tests
     timeout-minutes: 10
     strategy:
       fail-fast: false
@@ -51,7 +52,6 @@ jobs:
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v2
       with:
-        token: ${{ secrets.CODECOV_TOKEN }}
         env_vars: PYTHON
         flags: unittests
         verbose: true
