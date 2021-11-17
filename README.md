@@ -23,7 +23,7 @@ But the real reason why this library exists was because I was testing `notion-sd
 database query with filtering. So, I ended up writing this client, and it was not until I wrote the unittests that I
 figured out the original problem. So, you should probably use `notion-sdk-py` instead, but why delete this perfectly
 good code that I wrote. You might prefer to use this client library over `notion-sdk-py` if you are already using
-`requests` (and don't) want another dependency. Or you need Python 3.6 support. Or you like to have automatic
+`requests` (and don't want another dependency). Or you need Python 3.6 support. Or you like to have automatic
 pagination.
 
 ## Install
